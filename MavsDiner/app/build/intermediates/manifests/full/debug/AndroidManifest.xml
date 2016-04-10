@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.group6.cse5324.mavsdiner"
+    package="com.example.mark.mavsdiner"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -8,18 +8,68 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="23" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name="com.example.mark.mavsdiner.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/mavsdinericon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.group6.cse5324.mavsdiner.MainActivity" >
+        <activity
+            android:name="com.example.mark.mavsdiner.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.mark.mavsdiner.ViewOrders"
+            android:label="@string/title_activity_view_orders"
+            android:parentActivityName="com.example.mark.mavsdiner.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mark.mavsdiner.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mark.mavsdiner.ModifyMenu"
+            android:label="@string/title_activity_view_menu"
+            android:parentActivityName="com.example.mark.mavsdiner.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mark.mavsdiner.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mark.mavsdiner.MenuAdd"
+            android:label="@string/title_activity_view_menu"
+            android:parentActivityName="com.example.mark.mavsdiner.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mark.mavsdiner.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mark.mavsdiner.MenuAddItem"
+            android:label="@string/title_activity_menu_add_item"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.mark.mavsdiner.MenuModifyItem"
+            android:label="@string/title_activity_menu_modify_item"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.mark.mavsdiner.ModifyRestaurantStatus"
+            android:label="@string/title_activity_modify_restaurant_status"
+            android:parentActivityName="com.example.mark.mavsdiner.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mark.mavsdiner.MainActivity" />
         </activity>
     </application>
 

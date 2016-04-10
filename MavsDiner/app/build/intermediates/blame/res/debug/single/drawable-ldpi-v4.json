@@ -1,58 +1,26 @@
 [
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_overflow_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_overflow_material.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\add_new_menu_fooditem_24dp.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\add_new_menu_fooditem_24dp.png"
     },
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_selectall_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_selectall_material.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\edit.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\edit.png"
     },
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_btn_checkbox_unchecked_mtrl.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_btn_checkbox_unchecked_mtrl.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_add_shopping_cart_24dp.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_shopping_cart_24dp.png"
     },
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_btn_radio_on_mtrl.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_btn_radio_on_mtrl.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\logout.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\logout.png"
     },
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_clear_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_clear_material.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\delete.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\delete.png"
     },
     {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_paste_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_paste_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_btn_radio_off_mtrl.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_btn_radio_off_mtrl.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_copy_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_copy_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_cut_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_cut_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_ab_back_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_ab_back_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_go_search_api_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_go_search_api_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_voice_search_api_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_voice_search_api_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_ic_menu_share_material.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_ic_menu_share_material.png"
-    },
-    {
-        "merged": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\abc_btn_checkbox_checked_mtrl.png",
-        "source": "E:\\Mayur\\UTA\\2nd Sem\\SE1\\CSE5324App\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\abc_btn_checkbox_checked_mtrl.png"
+        "merged": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\mavsdinericon.png",
+        "source": "C:\\Users\\Mark\\AndroidStudioProjects\\MavsDiner\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\mavsdinericon.png"
     }
 ]

@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.group6.cse5324.mavsdiner"
+        applicationId "com.example.mark.mavsdiner"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
@@ -22,5 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.mcxiaoke.volley:library:1.0.+'
 }
