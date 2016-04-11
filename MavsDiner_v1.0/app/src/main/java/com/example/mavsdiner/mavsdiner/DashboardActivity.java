@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    UserLocalStore userLocalStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
         TextView mapRestaurnt = (TextView) findViewById(R.id.textViewMapRestaurant);
         mapRestaurnt.setPaintFlags(mapRestaurnt.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
+        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
@@ -42,6 +45,8 @@ public class DashboardActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID Logout was selected
             case R.id.Logout:
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(false);
                 startActivity(new Intent(DashboardActivity.this, MainActivity.class));
                 break;
             case R.id.ViewCart:

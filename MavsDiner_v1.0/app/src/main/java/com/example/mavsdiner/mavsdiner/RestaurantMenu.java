@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class RestaurantMenu extends AppCompatActivity {
 
+    UserLocalStore userLocalStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,8 @@ public class RestaurantMenu extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Food item(s) added to the cart", Toast.LENGTH_LONG).show();
             }
         });
+
+        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
@@ -40,6 +43,8 @@ public class RestaurantMenu extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID Logout was selected
             case R.id.Logout:
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(false);
                 startActivity(new Intent(RestaurantMenu.this, MainActivity.class));
                 break;
             case R.id.ViewCart:

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class RestaurantActivity extends AppCompatActivity {
 
+    UserLocalStore userLocalStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public class RestaurantActivity extends AppCompatActivity {
                 startActivity(new Intent(RestaurantActivity.this, Rating.class));
             }
         });
+
+        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
@@ -49,6 +52,8 @@ public class RestaurantActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID Logout was selected
             case R.id.Logout:
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(false);
                 startActivity(new Intent(RestaurantActivity.this, MainActivity.class));
                 break;
             case R.id.ViewCart:
