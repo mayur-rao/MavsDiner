@@ -3,6 +3,7 @@ package com.example.mavsdiner.mavsdiner;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -42,6 +43,12 @@ public class ServerRequest {
     {
         progressDialog.show();
         new FetchCustomerDataAsyncTask(user, userCallBack).execute();
+    }
+
+    public void resetUserPasswordInBackground(String email, String oldPwd, String newPwd, GetResetPasswordResult resetPasswordResult)
+    {
+        progressDialog.show();
+        new resetUserPasswordAsyncTask(email, oldPwd, newPwd, resetPasswordResult).execute();
     }
 
     public void fetchVendorDataInBackground(User user, GetUserCallBack userCallBack)
@@ -324,6 +331,73 @@ public class ServerRequest {
             }
 
             return returnedUser;
+        }
+    }
+
+    public class resetUserPasswordAsyncTask extends AsyncTask<Void, Void, String>
+    {
+        String email, newPwd, oldPwd;
+        GetResetPasswordResult resetPasswordResult;
+
+        public resetUserPasswordAsyncTask(String email, String oldPwd, String newPwd, GetResetPasswordResult resetPasswordResult)
+        {
+            this.email = email;
+            this.newPwd = newPwd;
+            this.oldPwd = oldPwd;
+            this.resetPasswordResult = resetPasswordResult;
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            progressDialog.dismiss();
+            resetPasswordResult.done(result);
+            super.onPostExecute(result);
+        }
+
+        @Override
+        protected String doInBackground(Void... params)
+        {
+            ArrayList<NameValuePair> dataToSend = new ArrayList<>();
+            dataToSend.add(new BasicNameValuePair("email", email));
+            dataToSend.add(new BasicNameValuePair("oldPassword", oldPwd));
+            dataToSend.add(new BasicNameValuePair("newPassword", newPwd));
+            System.out.println(dataToSend);
+
+
+            HttpParams httpRequestParams = new BasicHttpParams();
+            HttpConnectionParams.setConnectionTimeout(httpRequestParams, CONNECTION_TIMEOUT);
+            HttpConnectionParams.setSoTimeout(httpRequestParams, CONNECTION_TIMEOUT);
+
+            HttpClient client = new DefaultHttpClient(httpRequestParams);
+            HttpPost post;
+            if(!email.contains("aramark.com")) {
+                System.out.println("calling resetPassword_customer");
+                post = new HttpPost(SERVER_ADDRESS + "resetPassword_customer.php");
+            }
+            else{
+                System.out.println("calling resetPassword_vendor");
+                post = new HttpPost(SERVER_ADDRESS + "resetPassword_vendor.php");
+            }
+
+            String result = null;
+            try
+            {
+                post.setEntity(new UrlEncodedFormEntity(dataToSend));
+                HttpResponse httpResponse = client.execute(post);
+
+                HttpEntity entity = httpResponse.getEntity();
+                result = EntityUtils.toString(entity);
+                System.out.println("resultgot");
+            }
+
+            catch(Exception e)
+            {
+                System.out.println("exception caught");
+                e.printStackTrace();
+            }
+
+            return result;
         }
     }
 }

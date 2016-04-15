@@ -5,7 +5,7 @@ package com.example.mavsdiner.mavsdiner;
  */
 public class VerifyUserDetails {
 
-    String firstName, lastName, email, password;
+    String firstName, lastName, email, password, oldPassword;
     String restaurantName, operatingHours, status, streetName, city, state, country;
     int streetNumber, zip;
     String verificationResult = "";
@@ -49,6 +49,16 @@ public class VerifyUserDetails {
         verifyEmailAramark();
     }
 
+    // This is during reset password
+    public VerifyUserDetails(String email, String oldPassword, String newPassword)
+    {
+        this.email = email;
+        this.password = newPassword;
+        this.oldPassword = oldPassword;
+        verifyIfEmptyOnResetPassword();
+        verifyEmail();
+    }
+
     public void verifyIfEmptyOnLogin()
     {
         if(email.equals("") || password.equals("") /*|| age.toString()==null || name.toString()==null*/)
@@ -56,6 +66,15 @@ public class VerifyUserDetails {
             verificationResult += "Please enter all fields \n";
         }
     }
+
+    public void verifyIfEmptyOnResetPassword()
+    {
+        if(email.equals("") || password.equals("") || oldPassword.equals(""))
+        {
+            verificationResult += "Please enter all fields \n";
+        }
+    }
+
     public void verifyEmail()
     {
 
