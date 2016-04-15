@@ -32,7 +32,8 @@ public class MenuModifyItem extends Dialog {
     private Button cancel_menu_foodItem;
     private Button add_menu_foodItem;
     RequestQueue requestQueue;
-    private String insertUrl = "http://192.168.8.103/getModifyMenu.php";
+    //private String insertUrl = "http://192.168.8.103/getModifyMenu.php";
+    private String insertUrl ="http://omega.uta.edu/~mxf6133/getModifyMenu.php";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

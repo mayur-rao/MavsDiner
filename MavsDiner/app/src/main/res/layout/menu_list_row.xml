@@ -59,9 +59,21 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:id="@+id/price_"
+
+        android:text="$"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#f70303"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/price"
+        android:layout_toStartOf="@+id/price" />
+
+    <TextView
         android:id="@+id/price"
         android:layout_marginRight="10dp"
-        android:text="$10"
+        android:text="10"
         android:textSize="14sp"
         android:textStyle="bold"
         android:textColor="#f70303"

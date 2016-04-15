@@ -65,6 +65,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.mark.mavsdiner.MainActivity" />
         </activity>
+        <activity
+            android:name=".ViewOrdersList"
+            android:label="@string/title_activity_view_orders_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

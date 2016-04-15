@@ -33,8 +33,11 @@ public class ModifyRestaurantStatus extends AppCompatActivity {
     private Button changeStatusBtn;
     RequestQueue requestQueue;
     private Spinner spinner;
-    private String url = "http://192.168.8.103/modifyRestaurantStatus.php";
-    private String insertUrl = "http://192.168.8.103/setRestaurantStatus.php";
+    //private String url = "http://192.168.8.103/modifyRestaurantStatus.php";
+    //private String insertUrl = "http://192.168.8.103/setRestaurantStatus.php";
+
+    private String url = "http://omega.uta.edu/~mxf6133/modifyRestaurantStatus.php";
+    private String insertUrl = "http://omega.uta.edu/~mxf6133/setRestaurantStatus.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

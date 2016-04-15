@@ -34,7 +34,8 @@ public class ViewOrders extends AppCompatActivity {
     private ImageView deleteFoodItem;
     private AlertDialog.Builder deleteAlert;
     private Button completeOrderBtn;
-    private String url ="http://192.168.8.103/viewOrders.php";
+    //private String url ="http://192.168.8.103/viewOrders.php";
+    private String url ="http://omega.uta.edu/~mxf6133/viewOrders.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +91,13 @@ public class ViewOrders extends AppCompatActivity {
                         TextView total_quantity= (TextView)view.findViewById(R.id.total_quantity);//total quantity is calculated
 
                         String o_id = order_id.getText().toString();
-                        String t_q = total_quantity.getText().toString();
+                        String qty = total_quantity.getText().toString();
 
                        Toast.makeText(getApplicationContext(), "OID " + o_id, Toast.LENGTH_SHORT).show();
+
+                        ViewOrdersList viewOrdersList = new ViewOrdersList(orderListView.getContext(), o_id);
+                        viewOrdersList.show();
+
                         /*
                         Toast.makeText(getApplicationContext(), "Avail " + s_avail, Toast.LENGTH_SHORT).show();
 */

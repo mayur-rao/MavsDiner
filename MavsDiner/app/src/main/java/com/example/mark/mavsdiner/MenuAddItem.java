@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.android.volley.AuthFailureError;
@@ -34,7 +35,8 @@ public class MenuAddItem extends Dialog {
     private Button add_menu_foodItem;
     private int available;
     RequestQueue requestQueue;
-    private String insertUrl = "http://192.168.8.103/menuAddItem.php";
+    //private String insertUrl = "http://192.168.8.103/menuAddItem.php";
+    private String insertUrl ="http://omega.uta.edu/~mxf6133/menuAddItem.php";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +91,9 @@ public class MenuAddItem extends Dialog {
                     }
                 };
                 requestQueue.add(request);
+
+                Toast.makeText(context, "Food Item Added Successfully", Toast.LENGTH_LONG).show();
+                dismiss();
             }
         });
 

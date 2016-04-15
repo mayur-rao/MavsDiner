@@ -28,7 +28,8 @@ public class ModifyMenu extends AppCompatActivity {
 
     private ListView listView;
     private MenuListViewAdapter customListViewApapter;
-    private String url ="http://192.168.8.103/modifyMenu.php";
+    //private String url ="http://192.168.8.103/modifyMenu.php";
+    private String url ="http://omega.uta.edu/~mxf6133/modifyMenu.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

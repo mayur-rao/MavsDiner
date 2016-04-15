@@ -26,7 +26,8 @@ public class MenuAdd extends AppCompatActivity {
 
     private EditText add_title, add_desc, add_price;
     private Button add_menu_foodItem, cancel_menu_foodItem;
-    private String insertUrl = "http://192.168.8.103/menuAddItem.php";
+    //private String insertUrl = "http://192.168.8.103/menuAddItem.php";
+    private String insertUrl ="http://omega.uta.edu/~mxf6133/viewOrdersList.php";
     RequestQueue requestQueue;
 
     @Override
