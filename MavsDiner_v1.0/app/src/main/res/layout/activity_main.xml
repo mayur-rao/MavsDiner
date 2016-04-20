@@ -20,7 +20,6 @@
         android:layout_alignParentStart="true"
         android:gravity="center"
         android:textSize="60dp"
-        android:textStyle="bold"
         android:theme="@style/AlertDialog.AppCompat" />
     <RatingBar
         android:id="@+id/RestaurantRating"
@@ -49,7 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="445 Spaniolo Drive Arlington, TX 76019 817-642-5002"
         android:layout_margin="10dp"
         android:id="@+id/textView3"
         android:layout_below="@+id/Address" />
@@ -68,10 +66,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Mon-Sun 11a.m.-10p.m."
         android:layout_margin="10dp"
         android:id="@+id/textView4"
         android:layout_below="@+id/OperatingHours" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,6 +80,7 @@
         android:id="@+id/Menu"
         android:layout_below="@+id/textView4"
         android:textStyle="bold"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

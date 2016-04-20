@@ -7,6 +7,10 @@ public class User {
     String email, password, firstName, lastName, streetName, city, state, country;
     int customer_id, streetNumber, zip, restaurant_id;
     String restaurantName, operatingHours, status;
+
+    public User(){
+        //do nothing
+    }
     // Customer during login
     public User(int customer_id, String email, String password)
     {

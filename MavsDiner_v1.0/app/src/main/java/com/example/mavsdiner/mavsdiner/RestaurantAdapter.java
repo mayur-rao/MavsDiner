@@ -1,25 +1,24 @@
 package com.example.mavsdiner.mavsdiner;
 
-import android.content.res.Resources;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.content.Context;
-import android.widget.TextView;
-
 /**
- * Created by Swaroop on 3/14/16.
+ * Created by Swaroop on 4/18/16.
  */
-public class MenuAdapter extends BaseAdapter {
+public class RestaurantAdapter extends BaseAdapter {
 
     private ArrayList<HashMap<String,String>> list;
     Context context;
-    MenuAdapter(Context c, ArrayList<HashMap<String, String>> data)
+    RestaurantAdapter(Context c, ArrayList<HashMap<String, String>> data)
     {
         context = c;
         list = data;
@@ -48,17 +47,17 @@ public class MenuAdapter extends BaseAdapter {
         3. set the values
          */
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.restaurant_menu,parent,false);
-        TextView foodItemName = (TextView) row.findViewById(R.id.foodItemName);
-        TextView foodItemDescription = (TextView) row.findViewById(R.id.description);
-        TextView foodItemPrice = (TextView) row.findViewById(R.id.basicPrice);
+        View row = inflater.inflate(R.layout.single_restaurant,parent,false);
+        TextView restaurantName = (TextView) row.findViewById(R.id.txtRestaurantName);
+        RatingBar restaurantRating = (RatingBar) row.findViewById(R.id.ratingBar);
+        TextView restaurantStatus = (TextView) row.findViewById(R.id.txtRestaurantStatus);
 
         HashMap<String,String> hashMenuItems= new HashMap<>();
         hashMenuItems= list.get(position);
 
-        foodItemName.setText(hashMenuItems.get("food_item_name"));
-        foodItemDescription.setText(hashMenuItems.get("food_item_description"));
-        foodItemPrice.setText(hashMenuItems.get("food_item_price"));
+        restaurantName.setText(hashMenuItems.get("restaurant_name"));
+        restaurantRating.setRating(Float.parseFloat(hashMenuItems.get("rating")));
+        restaurantStatus.setText(hashMenuItems.get("status"));
 
         return row;
     }
