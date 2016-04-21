@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Food Item Name"
+        android:id="@+id/foodItemName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="37dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_margin="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Description"
+        android:id="@+id/description"
+        android:layout_below="@+id/foodItemName"
+        android:layout_alignStart="@+id/foodItemName" />
+
+    <TextView
+        android:layout_margin="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Basic Price :"
+        android:id="@+id/basicPrice"
+        android:layout_below="@+id/description"
+        android:layout_alignStart="@+id/description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:gravity="center"
+        android:foregroundGravity="center"
+        android:id="@+id/quantity"
+        android:layout_alignBottom="@+id/buttonDec"
+        android:layout_alignTop="@+id/buttonDec"
+        android:layout_toStartOf="@+id/buttonInc" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/buttonDec"
+        android:layout_alignTop="@+id/basicPrice"
+        android:layout_toStartOf="@+id/quantity" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/buttonInc"
+        android:gravity="center"
+        android:layout_alignTop="@+id/quantity"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:layout_above="@+id/description" />
+
+</RelativeLayout>

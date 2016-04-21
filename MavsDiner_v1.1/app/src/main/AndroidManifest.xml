@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mavsdiner.mavsdiner">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/mavsdinericon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Rating"
+            android:label="Rate Us"
+            android:theme="@style/AppTheme.Custom" />
+        <activity
+            android:name=".RestaurantMenu"
+            android:label="Menu" />
+        <activity
+            android:name=".RestaurantActivity"
+            android:label="Restaurant" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".ResetPassword"
+            android:label="Reset Password"
+            android:theme="@style/AppTheme.Custom" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Register" />
+        <activity
+            android:name=".DashboardActivity"
+            android:label="Dashboard" />
+        <activity
+            android:name=".VendorDashboard"
+            android:label="@string/title_activity_vendor_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ViewOrders"
+            android:label="@string/title_activity_view_orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ViewOrdersList"
+            android:label="@string/title_activity_view_orders_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ModifyRestaurantStatus"
+            android:label="@string/title_activity_modify_restaurant_status"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ModifyMenu"
+            android:label="@string/title_activity_modify_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".RestaurantList"
+            android:label="Restaurant List"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">MavsDiner</string>
+
+    <string-array name="foodItemName">
+        <item>Founders Favourite</item>
+        <item>The Texican</item>
+        <item>The Hickory</item>
+        <item>South Philly</item>
+        <item>Buffalo Chicken</item>
+        <item>Pizza Steak</item>
+        <item>Grilled Veggie</item>
+    </string-array>
+    <string-array name="foodItemDescription">
+        <item>Beef • Grilled Onions • Mozzarella • Mushrooms • Jalapenos • Mustard Blend</item>
+        <item>Beef or Chicken • Grilled Onions • Mozzarella • Jalapenos • Served with a side of Queso</item>
+        <item>Beef • Grilled Onions • Cheddar Cheese • Cherry Peppers • Hickory Sauce</item>
+        <item>Beef or Chicken • Grilled Onions • Mushrooms • Bell Pepper • Philly style “House made Whiz”</item>
+        <item>Chicken • Grilled Onions • Mozzarella • Diced Carrots • Celery • Blue Cheese • Wing Sauce • Served with a side of Ranch</item>
+        <item>Beef • Grilled Onions • Mozzarella • Pepperoni • Marinara Sauce</item>
+        <item>Grilled Onions • Provolone • Bell Peppers • Zucchini • Mushrooms • Cherry Peppers • Olive Oil Vinaigrette</item>
+    </string-array>
+    <string-array name="foodItemPrice">
+        <item>$ 7.19</item>
+        <item>$ 7.19</item>
+        <item>$ 7.19</item>
+        <item>$ 7.19</item>
+        <item>$ 7.19</item>
+        <item>$ 7.19</item>
+        <item>$ 6.19</item>
+    </string-array>
+    <string name="resetInstructions">
+        Enter the email address we registered with and we will send you instructions on how to reset your password.
+    </string>
+
+    <string name="title_activity_login_screen">MavsDiner Login</string>
+
+    <string name="title_activity_view_orders_list">view_orders_list</string>
+    <string name="title_activity_view_orders">View Orders</string>
+    <string name="title_activity_vendor_dashboard">Vendor Dashboard</string>
+    <string name="title_activity_view_menu">View Menu</string>
+    <string name="title_activity_modify_menu">Modify Menu</string>
+    <string name="title_activity_menu_add_item">Menu Add Item</string>
+    <string name="title_activity_menu_modify_item">Menu Modify Item</string>
+    <string name="title_activity_modify_restaurant_status">Modify Restaurant Status</string>
+
+    <string-array name="restaurant_status">
+        <item>Open</item>
+        <item>Closed</item>
+        <item>Maintenance</item>
+        <item>Shut Down</item>
+    </string-array>
+
+</resources>
