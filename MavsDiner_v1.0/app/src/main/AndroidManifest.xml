@@ -13,9 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListViewRest"
-            android:theme="@style/AppTheme">
-
+        <activity android:name=".AddFoodItem">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,12 +26,15 @@
             android:name=".Rating"
             android:label="Rate Us"
             android:theme="@style/AppTheme.Custom" />
-        <activity
+        <!--activity
             android:name=".RestaurantMenu"
-            android:label="Menu" />
+            android:label="Menu" /-->
         <activity
             android:name=".RestaurantActivity"
             android:label="Restaurant" />
+        <!--activity
+            android:name=".MainActivity"
+            android:label="Login" /-->
         <activity
             android:name=".ResetPassword"
             android:label="Reset Password"

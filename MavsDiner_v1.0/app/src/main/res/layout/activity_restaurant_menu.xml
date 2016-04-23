@@ -27,7 +27,8 @@
         android:id="@+id/menuListView"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textView2"
-        android:layout_above="@+id/button4"/>
+        android:layout_above="@+id/button4"
+        android:choiceMode="multipleChoiceModal"/>
 
     <Button
         android:layout_width="match_parent"
