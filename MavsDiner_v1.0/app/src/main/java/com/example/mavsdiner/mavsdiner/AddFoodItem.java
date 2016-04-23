@@ -1,19 +1,15 @@
 package com.example.mavsdiner.mavsdiner;
 
-import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +25,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by Mayur on 4/20/2016.
@@ -175,6 +172,7 @@ public class AddFoodItem extends AppCompatActivity {
             if (view.getId() == R.id.checkBox) {
 
                 final CheckBox cb = (CheckBox) view;
+                final int id = list.getId();
                 //CheckBox food = (CheckBox)findViewById(R.id.checkBox);
                 cb.setOnClickListener(new CheckBox.OnClickListener() {
                     @Override
@@ -183,7 +181,7 @@ public class AddFoodItem extends AppCompatActivity {
 
 
                                 if (((CheckBox) v).isChecked()) {
-                                    new Add_To_Cart().execute();
+                                    new Add_To_Cart().execute(id);
                                 }
 
 
@@ -212,14 +210,13 @@ public class AddFoodItem extends AppCompatActivity {
 
     }
 
-    public class Add_To_Cart extends AsyncTask<Void, Void, Void>{
+    public  class Add_To_Cart extends AsyncTask<Integer, Void, Void>{
 
 
         @Override
-        protected Void doInBackground(Void... params) {
-
+        protected Void doInBackground(Integer... params) {
             try {
-                SendFood();
+                SendFood(params);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -229,64 +226,103 @@ public class AddFoodItem extends AppCompatActivity {
 
 
     // Create GetText Metod
-    public  void  SendFood()  throws UnsupportedEncodingException {
+    public  void  SendFood(Integer[] params)  throws UnsupportedEncodingException {
 
 
+        // Create data variable for sent values to server
+        ArrayList idlist = new ArrayList<>();
+        RestaurantHandler sh = new RestaurantHandler();
 
-        SparseBooleanArray checkedItemPositions = null;
-        checkedItemPositions = list.getCheckedItemPositions();
-        int itemCount = list.getCount();
-        System.out.println("Clicked position is " + checkedItemPositions);
+        // Making a request to url and getting response
+        String jsonStr = sh.makeServiceCall(url, RestaurantHandler.GET);
 
-        //Swaroop pls CHECK THE LOGIC HERE. I have tried everything
-        for(int i=0; i<itemCount; i++) {
-           // if (checkedItemPositions.get(i)) {
-                data = URLEncoder.encode("cart", "UTF-8")
-                        + "=" + URLEncoder.encode(String.valueOf(list.getItemIdAtPosition(i)), "UTF-8");
-            //}
+        Log.d("Response: ", "> " + jsonStr);
 
-
-
-            String text = "";
-            BufferedReader reader = null;
-
-            // Send data
+        if (jsonStr != null) {
             try {
+                JSONObject jsonObj = new JSONObject(jsonStr);
 
-                // Defined URL  where to send data
-                URL url = new URL("http://192.168.0.20/android/post.php");
-                // Send POST data request
-                URLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setDoOutput(true);
-                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-                wr.write(data);
-                wr.flush();
+                // Getting JSON Array node
+                fooditems = jsonObj.getJSONArray(TAG_FOODITEMS);
 
-                // Get the server response
+                // looping through All Contacts
+                for (int i = 0; i < fooditems.length(); i++) {
 
-                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                StringBuilder sb = new StringBuilder();
-                String line = null;
+                    JSONObject c = fooditems.getJSONObject(i);
+                    String cart = c.getString(TAG_CART);
 
-                // Read Server Response
-                while ((line = reader.readLine()) != null) {
-                    // Append server response in string
-                    sb.append(line + "\n");
+                    HashMap<String, String> foodl = new HashMap<String, String>();
+                    foodl.put(TAG_CART, cart);
+
+                    idlist.add(foodl);
                 }
 
+                //Swaroop check this
+                //Fixed the problem of getting id of all items. But cart_id is Arraylist and position of checked item is incompatible
+                //Please see how to fix this.
+                String data = URLEncoder.encode("cart", "UTF-8")
+                        + "=" + URLEncoder.encode(String.valueOf(params.toString()), "UTF-8");
 
-                text = sb.toString();
-            } catch (Exception ex) {
 
-            } finally {
-                try {
+                    String text = "";
+                    BufferedReader reader=null;
 
-                    reader.close();
-                } catch (Exception ex) {
-                }
+                    // Send data
+                    try
+                    {
+
+                        // Defined URL  where to send data
+                        URL url = new URL("http://192.168.0.20/android/post.php");
+                        //content.setText(" url connected! " );
+
+                        // Send POST data request
+
+                        URLConnection conn = (HttpURLConnection)url.openConnection();
+                        conn.setDoOutput(true);
+                        OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                        wr.write( data );
+                        wr.flush();
+
+                        // Get the server response
+
+                        reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        StringBuilder sb = new StringBuilder();
+                        String line = null;
+
+                        // Read Server Response
+                        while((line = reader.readLine()) != null)
+                        {
+                            // Append server response in string
+                            sb.append(line + "\n");
+                        }
+
+
+                        text = sb.toString();
+                    }
+                    catch(Exception ex)
+                    {
+
+                    }
+                    finally
+                    {
+                        try
+                        {
+
+                            reader.close();
+                        }
+
+                        catch(Exception ex) {}
+                    }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            }
+        } else {
+            Log.e("RestaurantHandler", "Couldn't get any data from the url");
         }
+
+    }
         }
 
 
