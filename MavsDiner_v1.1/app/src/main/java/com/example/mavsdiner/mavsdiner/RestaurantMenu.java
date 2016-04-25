@@ -8,9 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +21,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import java.util.ArrayList;
@@ -36,7 +33,8 @@ public class RestaurantMenu extends AppCompatActivity {
     private String url ="http://omega.uta.edu/~sxr5833/viewRestaurantMenu.php";
     private ListView menuListView;
     private MenuAdapter customMenuListViewAdapter;
-
+    private String restaurantId;
+    private String foodItemId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,65 +46,6 @@ public class RestaurantMenu extends AppCompatActivity {
         TextView txtViewRestaurantName  = (TextView)findViewById(R.id.textView2);
         txtViewRestaurantName.setText(restaurantName);
 
-        Button addToCart = (Button)findViewById(R.id.button4);
-        addToCart.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Food item(s) added to the cart", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        /*System.out.println("Inside restaurant menu sending post request");
-        JsonArrayRequest request= new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-
-                ArrayList<HashMap<String,String>> menuList= new ArrayList<>();
-
-                for(int i=0;i<response.length();i++){
-
-                    try {
-                        JSONObject jsonObject = response.getJSONObject(i);
-                        String foodItemName = jsonObject.getString("food_item_name");
-                        String foodItemPrice = jsonObject.getString("food_item_price");
-                        String foodItemDescription = jsonObject.getString("food_item_description");
-
-
-                        HashMap<String,String> data= new HashMap<>();
-                        data.put("food_item_name",foodItemName);
-                        data.put("food_item_price",foodItemPrice);
-                        data.put("food_item_description",foodItemDescription);
-
-                        menuList.add(data);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                menuListView= (ListView)findViewById(R.id.menuListView);
-
-                customMenuListViewAdapter = new MenuAdapter(RestaurantMenu.this, menuList);
-                menuListView.setAdapter(customMenuListViewAdapter);
-
-                menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        TextView food_item_name = (TextView)view.findViewById(R.id.foodItemName);
-                        TextView food_item_description = (TextView)view.findViewById(R.id.description);
-                        TextView food_item_price = (TextView)view.findViewById(R.id.basicPrice);
-
-
-                    }
-                });
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                VolleyLog.d("ViewMenuList",error.getMessage());
-            }
-        });
-        AppController.getmInstance().addToRequestQueue(request); */
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
@@ -114,7 +53,7 @@ public class RestaurantMenu extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 System.out.println(response.toString());
-                ArrayList<HashMap<String,String>> menuList= new ArrayList<>();
+                final ArrayList<HashMap<String,String>> menuList= new ArrayList<>();
                 try {
                 JSONArray jsonArray = new JSONArray(response.toString());
                 for(int i=0;i<jsonArray.length();i++){
@@ -142,16 +81,69 @@ public class RestaurantMenu extends AppCompatActivity {
 
                 customMenuListViewAdapter = new MenuAdapter(RestaurantMenu.this, menuList);
                 menuListView.setAdapter(customMenuListViewAdapter);
-
-                menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                menuListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        TextView food_item_name = (TextView)view.findViewById(R.id.foodItemName);
-                        TextView food_item_description = (TextView)view.findViewById(R.id.description);
-                        TextView food_item_price = (TextView)view.findViewById(R.id.basicPrice);
+                        //TextView txtRestaurantName = (TextView)view.findViewById(R.id.txtRestaurantName);
+                        TextView txtFoodItemName = (TextView) view.findViewById(R.id.foodItemName);
+                        TextView txtFoodItemDescription = (TextView) view.findViewById(R.id.description);
+                        TextView txtFoodItemPrice = (TextView) view.findViewById(R.id.basicPrice);
+                        TextView txtFoodItemQuantity = (TextView) view.findViewById(R.id.quantity);
+
+                        //String strRestaurantName = txtRestaurantName.getText().toString();
+                        final String strFoodItemName = txtFoodItemName.getText().toString();
+                        final String strFoodItemQuantity = txtFoodItemQuantity.getText().toString();
+                        //final String all = restaurantName+strFoodItemName+strFoodItemDescription+strFoodItemPrice+strFoodItemQuantity;
 
 
+                        //Get Customer ID
+                        userLocalStore = new UserLocalStore(RestaurantMenu.this);
+                        User logUser = new User();
+                        logUser = userLocalStore.getLoggedInUser();
+                        final int userID = logUser.customer_id;
+
+                        //Add to cart
+                        StringRequest strReq2 = new StringRequest(Request.Method.POST,
+                                "http://omega.uta.edu/~sxr5833/addCart.php", new Response.Listener<String>() {
+
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response.substring(response.indexOf('{'), response.lastIndexOf('}') + 1));
+                                    //foodItemId = jsonObject.getString("food_item_id");
+
+                                }
+                                catch(Exception e)
+                                {
+                                    System.out.println("Caught exception cart");
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, new Response.ErrorListener() {
+
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                VolleyLog.d("ErrorAddCart: " + error.getMessage());
+                            }
+                        })
+                        {
+                            @Override
+                            protected Map<String,String> getParams() throws AuthFailureError {
+                                Map<String,String> parameters =new HashMap<String, String>();
+                                parameters.put("restaurant_name", restaurantName);
+                                parameters.put("food_item_name", strFoodItemName);
+                                parameters.put("customer_id", Integer.toString(userID));
+                                parameters.put("quantity", strFoodItemQuantity);
+                                return parameters;
+                            }
+                        };
+                        // Adding request to request queue
+                        AppController.getmInstance().addToRequestQueue(strReq2);
+
+                        Toast.makeText(RestaurantMenu.this, " Food item added to cart successfully", Toast.LENGTH_LONG).show();
+                        return true;
                     }
                 });
             }
