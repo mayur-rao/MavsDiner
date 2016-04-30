@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyMap</string>
+    <string name="title_activity_maps">MavsDiner</string>
+    <string name="title_activity_dummy">DummyActivity</string>
+    <string name="rest_name">MOES</string>
+    <string name="rest_status">OPEN</string>
+    <string name="test">TESTING</string>
+</resources>
