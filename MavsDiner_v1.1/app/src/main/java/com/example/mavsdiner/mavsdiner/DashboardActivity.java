@@ -43,6 +43,12 @@ public class DashboardActivity extends AppCompatActivity {
 
         TextView mapRestaurnt = (TextView) findViewById(R.id.textViewMapRestaurant);
         mapRestaurnt.setPaintFlags(mapRestaurnt.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        mapRestaurnt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, MapsActivity2.class));
+            }
+        });
 
         userLocalStore = new UserLocalStore(this);
 
@@ -104,6 +110,7 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, MainActivity.class));
                 break;
             case R.id.ViewCart:
+                startActivity(new Intent(DashboardActivity.this, CartActivity.class));
                 break;
             default:
                 break;

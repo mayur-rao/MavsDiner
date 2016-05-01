@@ -55,8 +55,8 @@
         android:textColor="#006400"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/description"
+        android:layout_toEndOf="@+id/description" />
 
     <TextView
         android:id="@+id/price_"
@@ -93,7 +93,7 @@
 
     <ImageView
         android:id="@+id/deleteFoodItem"
-        android:src="@drawable/delete"
+        android:src="@drawable/edit"
         android:layout_marginRight="5dp"
         android:layout_marginTop="7dp"
         android:layout_alignParentRight="true"
@@ -103,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <ImageView
+    <!--ImageView
         android:id="@+id/editFoodItem"
         android:src="@drawable/edit"
         android:layout_marginTop="2dp"
@@ -112,7 +112,7 @@
         android:layout_below="@+id/description"
         android:layout_toRightOf="@id/thumbnail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" /-->
 
 
 </RelativeLayout>

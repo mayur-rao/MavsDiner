@@ -205,6 +205,7 @@ public class RestaurantActivity extends AppCompatActivity {
                 startActivity(new Intent(RestaurantActivity.this, MainActivity.class));
                 break;
             case R.id.ViewCart:
+                startActivity(new Intent(RestaurantActivity.this, CartActivity.class));
                 break;
             default:
                 break;

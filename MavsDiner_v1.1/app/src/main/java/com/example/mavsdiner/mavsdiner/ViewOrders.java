@@ -2,6 +2,7 @@ package com.example.mavsdiner.mavsdiner;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -61,23 +62,27 @@ public class ViewOrders extends AppCompatActivity {
                 for(int i=0;i<response.length();i++){
 
                     try {
+
                         JSONObject jsonObject = response.getJSONObject(i);
-                        String id = jsonObject.getString("order_id");
-                        //String food_item_id = jsonObject.getString("food_item_id");
-                        //String customer_id = jsonObject.getString("customer_id");
-                        String total_quantity = jsonObject.getString("total_quantity");
-                        //String restaurant_id = jsonObject.getString("restaurant_id");
-                        Log.v("Order id is ", id);
+                        String order_status = jsonObject.getString("order_status");
+                        //if(Integer.parseInt(order_status) == 1) {
+                            String id = jsonObject.getString("order_id");
 
-                        HashMap<String,String> data= new HashMap<>();
-                        data.put("order_id",id);
-                        //data.put("food_item_id",food_item_id);
-                        //data.put("customer_id",customer_id);
-                        data.put("total_quantity",total_quantity);
-                        //data.put("restaurant_id",restaurant_id);
+                            //String food_item_id = jsonObject.getString("food_item_id");
+                            //String customer_id = jsonObject.getString("customer_id");
+                            String total_quantity = jsonObject.getString("total_quantity");
+                            //String restaurant_id = jsonObject.getString("restaurant_id");
+                            Log.v("Order id is ", id);
 
-                        orderList.add(data);
+                            HashMap<String, String> data = new HashMap<>();
+                            data.put("order_id", id);
+                            //data.put("food_item_id",food_item_id);
+                            //data.put("customer_id",customer_id);
+                            data.put("total_quantity", total_quantity);
+                            //data.put("restaurant_id",restaurant_id);
 
+                            orderList.add(data);
+                        //}
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -135,7 +140,8 @@ public class ViewOrders extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.Logout) {
+        if (id == R.id.logout) {
+
             return true;
         }
         return super.onOptionsItemSelected(item);

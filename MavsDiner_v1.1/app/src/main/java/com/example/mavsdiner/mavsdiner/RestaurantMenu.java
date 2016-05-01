@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,6 +82,19 @@ public class RestaurantMenu extends AppCompatActivity {
 
                 customMenuListViewAdapter = new MenuAdapter(RestaurantMenu.this, menuList);
                 menuListView.setAdapter(customMenuListViewAdapter);
+                customMenuListViewAdapter.setCustomButtonListener(new CustomButtonListener()
+                {
+                    @Override
+                    public void onButtonClickListener(int position, EditText editText, int value)
+                    {
+                        int quantity = Integer.parseInt(editText.getText().toString());
+                        quantity = quantity+1*value;
+                        if(quantity<0)
+                            quantity=0;
+                        editText.setText(String.valueOf(quantity));
+                    }
+                });
+
                 menuListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -184,6 +198,7 @@ public class RestaurantMenu extends AppCompatActivity {
                 startActivity(new Intent(RestaurantMenu.this, MainActivity.class));
                 break;
             case R.id.ViewCart:
+                startActivity(new Intent(RestaurantMenu.this, CartActivity.class));
                 break;
             default:
                 break;

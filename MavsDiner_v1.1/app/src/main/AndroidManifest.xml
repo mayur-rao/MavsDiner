@@ -9,9 +9,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.example.mavsdiner.mavsdiner.permission.MAPS_RECEIVE" />
 
     <application
         android:name=".AppController"
@@ -51,6 +56,15 @@
             android:name=".DashboardActivity"
             android:label="Dashboard" />
         <activity
+            android:name=".CartActivity"
+            android:label="Cart" />
+        <activity
+            android:name=".CartAdapter"
+            android:label="Cart" />
+        <activity
+            android:name=".CheckoutActivity"
+            android:label="Checkout" />
+        <activity
             android:name=".VendorDashboard"
             android:label="@string/title_activity_vendor_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -69,10 +83,23 @@
         <activity
             android:name=".ModifyMenu"
             android:label="@string/title_activity_modify_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RestaurantList"
-            android:label="Restaurant List"/>
+            android:label="Restaurant List" />
+        <activity
+            android:name=".DummyActivity"
+            android:label="@string/title_activity_dummy"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity2"
+            android:label="@string/title_activity_maps2"></activity>
     </application>
 
 </manifest>

@@ -43,11 +43,18 @@
     <string name="title_activity_menu_modify_item">Menu Modify Item</string>
     <string name="title_activity_modify_restaurant_status">Modify Restaurant Status</string>
 
+    <string name="title_activity_maps">MavsDiner</string>
+    <string name="title_activity_dummy">DummyActivity</string>
+    <string name="rest_name">Subway</string>
+    <string name="rest_status">Open</string>
+    <string name="test">TESTING</string>
+
     <string-array name="restaurant_status">
         <item>Open</item>
         <item>Closed</item>
         <item>Maintenance</item>
         <item>Shut Down</item>
     </string-array>
+    <string name="title_activity_maps2">Map</string>
 
 </resources>
