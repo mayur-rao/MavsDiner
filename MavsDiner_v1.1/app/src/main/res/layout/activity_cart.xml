@@ -8,7 +8,7 @@
 
 
 
-    <TextView
+    <!--TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -16,20 +16,19 @@
         android:id="@+id/R2"
         android:layout_margin="5dp"
         android:textStyle="bold"
-        android:layout_marginLeft="35dp"/>
+        android:layout_marginLeft="35dp"/-->
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/buckysListView"
-        android:layout_below="@id/R2"
         android:layout_above="@+id/SumTotPrice"></ListView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="53$"
+        android:text="49.55$"
         android:id="@+id/SumTotPrice"
         android:textStyle="bold"
         android:layout_above="@+id/button4"

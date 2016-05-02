@@ -12,33 +12,33 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mavsdiner.mavsdiner.DummyActivity">
     <TextView
-        android:id="@+id/rest_name"
-        android:text="@string/rest_name"
+        android:id="@+id/rest_name2"
+        android:text="@string/rest_name2"
         android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dip"/>
 
     <TextView
-    android:id="@+id/rest_status"
-    android:text="@string/rest_status"
-        android:layout_below="@id/rest_name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="20dip"/>
+        android:id="@+id/rest_status2"
+        android:text="@string/rest_status2"
+        android:layout_below="@id/rest_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"/>
 
 
 
     <RatingBar
-        android:id="@+id/infowindow_rating"
+        android:id="@+id/infowindow_rating2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_below="@id/rest_status"
+        android:layout_below="@id/rest_status2"
         android:numStars="5"
-        android:rating="4.1"
+        android:rating="3.66667"
         android:isIndicator="true"
         style="?android:attr/ratingBarStyleIndicator"
         />
 
-    </RelativeLayout>
+</RelativeLayout>

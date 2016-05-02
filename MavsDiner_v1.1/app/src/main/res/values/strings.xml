@@ -45,8 +45,10 @@
 
     <string name="title_activity_maps">MavsDiner</string>
     <string name="title_activity_dummy">DummyActivity</string>
-    <string name="rest_name">Subway</string>
+    <string name="rest_name">Texadelphia</string>
     <string name="rest_status">Open</string>
+    <string name="rest_name2">Moes</string>
+    <string name="rest_status2">Maintainence</string>
     <string name="test">TESTING</string>
 
     <string-array name="restaurant_status">

@@ -77,6 +77,7 @@ public class RestaurantList extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), restaurantName.getText().toString(), Toast.LENGTH_LONG).show();
 
                         // navigate to restaurant page
+
                         Intent nextIntent = new Intent(RestaurantList.this, RestaurantActivity.class);
                         nextIntent.putExtra("restaurantName",restaurantName.getText().toString());
                         startActivity(nextIntent);

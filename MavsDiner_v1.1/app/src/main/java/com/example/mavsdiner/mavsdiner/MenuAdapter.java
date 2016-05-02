@@ -32,7 +32,7 @@ public class MenuAdapter extends BaseAdapter {
         context = c;
         list = data;
         for(int i=0; i<data.size(); i++)
-            quantity.add(1);
+            quantity.add(0);
     }
 
     public void setCustomButtonListener(CustomButtonListener customButtonListner)

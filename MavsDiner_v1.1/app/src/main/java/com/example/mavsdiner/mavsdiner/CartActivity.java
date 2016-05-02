@@ -47,7 +47,7 @@ public class CartActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> restaurantList = new ArrayList<>();
     UserLocalStore userLocalStore;
 
-    private String insertUrl = "http://chetanonline5.eu.pn/insert.php";
+    private String insertUrl = "http://omega.uta.edu/~sxr5833/insert.php";
     RequestQueue requestQueue;
 
     int sumtoti = 0,oidi = 0, ridi = 0;
@@ -182,7 +182,7 @@ public class CartActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             Log.d("MyAsyncTask", "onPre");
-            json_url = "http://chetanonline5.eu.pn/json_fi.php";
+            json_url = "http://omega.uta.edu/~sxr5833/json_fi.php";
 
 
         }

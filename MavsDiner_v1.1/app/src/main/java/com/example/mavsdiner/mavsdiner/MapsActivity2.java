@@ -47,14 +47,15 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
         final View myContentsView = null;
         // Add a marker in Sydney and move the camera
         LatLng MOES = new LatLng(32.732142, -97.116033);
-        mMap.addMarker(new MarkerOptions().position(MOES));
-        LatLng TEXADELPHIA = new LatLng(38.879970, -77.106770);
-        mMap.addMarker(new MarkerOptions().position(TEXADELPHIA));
-        LatLng PIEFIVE = new LatLng(38.879970, -77.106770);
-        mMap.addMarker(new MarkerOptions().position(PIEFIVE));
+        mMap.addMarker(new MarkerOptions().position(MOES).title("Moes"));
+        LatLng TEXADELPHIA = new LatLng(32.735687, -97.108066);
+        mMap.addMarker(new MarkerOptions().position(TEXADELPHIA).title("Texadelphia"));
+
+
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(MOES));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
             @Override
             public View getInfoWindow(Marker marker) {
@@ -64,17 +65,37 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
 
             @Override
             public View getInfoContents(Marker marker) {
-                View v = getLayoutInflater().inflate(R.layout.content_dummy, null);
-                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                    @Override
-                    public void onInfoWindowClick(Marker marker) {
-                        Intent it = new Intent(MapsActivity2.this,RestaurantActivity.class);
-                        it.putExtra("restaurantName","Texadelphia");
-                        startActivity(it);
-                    }
-                });
-                return v;
+                int i = marker.getTitle().compareTo("Texadelphia");
+                //int j = marker.getTitle().compareTo("Texadelphia");
+
+                if (i == 0) {
+                    View v = getLayoutInflater().inflate(R.layout.content_dummy, null);
+                    mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                        @Override
+                        public void onInfoWindowClick(Marker marker) {
+                            Intent it = new Intent(MapsActivity2.this, RestaurantActivity.class);
+                            it.putExtra("restaurantName", "Texadelphia");
+                            startActivity(it);
+                        }
+                    });
+                    return v;
+                }
+                else
+                {
+
+                    View v = getLayoutInflater().inflate(R.layout.content_dummy2, null);
+                   mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                        @Override
+                        public void onInfoWindowClick(Marker marker) {
+                           // Intent it = new Intent(MapsActivity2.this, RestaurantActivity.class);
+                            //it.putExtra("restaurantName", "Moes");
+                            //startActivity(it);
+                        }
+                    });
+                    return v;
+                }
             }
+
 
         });
 

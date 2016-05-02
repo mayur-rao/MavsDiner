@@ -75,9 +75,10 @@ public class CartAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.cart_custom_row,parent,false);
         TextView buckysText  = (TextView) row.findViewById(R.id.buckysText );
+        TextView restaurantName  = (TextView) row.findViewById(R.id.restaurantName);
         TextView PriceText  = (TextView) row.findViewById(R.id.PriceText );
         foodItemQuantity  = (EditText) row.findViewById(R.id.quantity );
-        final TextView TotPrice  = (TextView) row.findViewById(R.id.TotPrice );
+        TextView TotPrice  = (TextView) row.findViewById(R.id.TotPrice );
         //TextView SumTotPrice  = (TextView) row.findViewById(R.id.SumTotPrice );
 
         //RatingBar restaurantRating = (RatingBar) row.findViewById(R.id.ratingBar);
@@ -98,7 +99,7 @@ public class CartAdapter extends BaseAdapter {
                 if (customButtonListener != null) {
                     customButtonListener.onButtonClickListener(position, foodItemQuantity, 1);
                     quantity.set(position,quantity.get(position) + 1);
-                    PriceText2 = hashMenuItems.get("food_item_price");
+                    /*PriceText2 = hashMenuItems.get("food_item_price");
                     totpricei = Integer.parseInt(PriceText2);
                     quantityi = quantity.get(position);
                     totpricei = totpricei * quantityi;
@@ -106,7 +107,7 @@ public class CartAdapter extends BaseAdapter {
                     System.out.println(quantityi);
                     System.out.println(totpricei);
                     System.out.println(position);
-                    TotPrice.setText(Integer.toString(totpricei));
+                    TotPrice.setText(Integer.toString(totpricei));*/
                     //Toast.makeText(context, "Clicked on inc button", Toast.LENGTH_LONG).show();
                 }
                 else
@@ -125,7 +126,7 @@ public class CartAdapter extends BaseAdapter {
                     customButtonListener.onButtonClickListener(position,foodItemQuantity,-1);
                     if(quantity.get(position)>1)
                         quantity.set(position, quantity.get(position) - 1);
-                    Toast.makeText(context, "Clicked on dec button", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "Clicked on dec button", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -140,6 +141,7 @@ public class CartAdapter extends BaseAdapter {
         //hashMenuItems= list.get(position);
 
         buckysText.setText(hashMenuItems.get("food_item_name"));
+        restaurantName.setText(hashMenuItems.get("restaurant_name"));
         PriceText2 = hashMenuItems.get("food_item_price");
         finstr = PriceText2 + dollor ;
         PriceText.setText(finstr);
@@ -148,15 +150,18 @@ public class CartAdapter extends BaseAdapter {
         quantity2 = hashMenuItems.get("quantity");
         //restaurantRating.setRating(Float.parseFloat(hashMenuItems.get("rating")));
         //restaurantStatus.setText(hashMenuItems.get("status"));
-        totpricei = Integer.parseInt(PriceText2);
-        quantityi = Integer.parseInt(quantity2);
-        totpricei = totpricei * quantityi;
-        totpricestr = Integer.toString(totpricei);
-        finstr2  = totpricestr + dollor ;
-        TotPrice.setText(finstr2);
-        sumtotic = sumtotic + totpricei;
-        System.out.println("sumtotic is");
-        System.out.println(sumtotic);
+        //totpricei = Integer.parseInt(PriceText2);
+        //totpricei = 0;
+
+
+        //quantityi = Integer.parseInt(quantity2);
+        //totpricei = totpricei * quantityi;
+        //totpricestr = Integer.toString(totpricei);
+        //finstr2  = totpricestr + dollor ;
+        TotPrice.setText(finstr);
+        //sumtotic = sumtotic + totpricei;
+        //System.out.println("sumtotic is");
+        //System.out.println(sumtotic);
         //SumTotPrice.setText(finstr2);
 
         return row;
