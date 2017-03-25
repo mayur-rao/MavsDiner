@@ -1,0 +1,41 @@
+Courses:
+
+Choice 1
+	
+	CSE 5311-003 - Algos - C ding - Tu/Th - 3:30-4:50
+	CSE 5382-002 - Secure Prog - Levine - Mo/We - 7:00-8:20
+	CSE 6324-001 - Advanced SE - Liu - Tu/Th - 12:30-1:50
+
+Choice 2
+	
+	CSE 5311-002 - Algos - Huang - Tu/Th - 3:30-4:50
+	CSE 5382-002 - Secure Prog - Levine - Mo/We - 7:00-8:20
+	CSE 6324-001 - Advanced SE - Liu - Tu/Th - 12:30-1:50
+	
+Choice 3
+	
+	CSE 5311-002 - Algos - Huang - Tu/Th - 3:30-4:50 OR CSE 5311-003 - Algos - C ding - Tu/Th - 3:30-4:50
+	CSE 5344-001 - Networks - Hao Che - Mo/We - 4:00-5:20
+	CSE 6324-001 - Advanced SE - Liu - Tu/Th - 12:30-1:50
+
+Choice 4
+	
+	CSE 5311-002 - Algos - Huang - Tu/Th - 3:30-4:50 OR CSE 5311-003 - Algos - C ding - Tu/Th - 3:30-4:50
+	CSE 5344-002 - Networks - Datta - Mo/We - 4:00-5:20
+	CSE 6324-001 - Advanced SE - Liu - Tu/Th - 12:30-1:50
+	
+Choice 5
+
+	CSE 5311-002 - Algos - Huang - Tu/Th - 3:30-4:50 OR CSE 5311-003 - Algos - C ding - Tu/Th - 3:30-4:50
+	CSE 5382-002 - Secure Prog - Levine - Mo/We - 7:00-8:20 OR 
+	CSE 5344-002 - Networks - Datta - Mo/We - 4:00-5:20 OR 
+	CSE 5344-001 - Networks - Hao Che - Mo/We - 4:00-5:20
+	CSE 6350-001 - ACA - Hao Che - Mo/We - 5:30-6:50
+	
+Choice 6
+
+	CSE 5307-001 - PLC - Morgan - Mo/We/Fr - 9:00-9:50
+	CSE 5345-002 - Wireless - Datta - Mo/We - 4:00-5:20 OR 
+	CSE 5345-001 - Wireless - Yonghe Liu - Tu/Th - 12:30-1:50
+	Mining or SDP
+	
